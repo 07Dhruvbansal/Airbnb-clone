@@ -6,6 +6,8 @@ const path = require("path");
 
 app.set("view engine", "ejs");
 
+app.use(express.urlencoded({ extended: true }));
+
 main().catch(err => console.log(err));
 
 async function main() {
@@ -23,6 +25,21 @@ app.get("/listings", async (req, res) => {
     res.render("listing/index.ejs", { allListings });
 });
 
+// new route:
+app.get("/listings/new", async(req,res) =>{
+    res.render("listing/new.ejs");
+
+})
+
+// create route
+app.post("/listings", async (req, res) => {
+    const newListing = new Listing(req.body.listing);
+
+    await newListing.save();
+
+    res.redirect("/listings");
+});
+
 // show route:
 
 app.get("/listings/:id", async (req, res) => {
@@ -32,6 +49,7 @@ app.get("/listings/:id", async (req, res) => {
 
     res.render("listing/show.ejs", { listing });
 });
+
 
 
 app.listen(8080, () =>{
