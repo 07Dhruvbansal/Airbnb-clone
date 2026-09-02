@@ -4,11 +4,13 @@ const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-
+app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
+
 
 main().catch(err => console.log(err));
 
