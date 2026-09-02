@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust - New Listing</title>
 </head>
+
 <body>
 
     <h1>Create a New Listing</h1>
@@ -16,7 +17,7 @@
             <input 
                 type="text" 
                 id="title" 
-                name="title" 
+                name="listing[title]" 
                 placeholder="Enter listing title"
                 required
             >
@@ -28,7 +29,7 @@
             <label for="description">Description</label>
             <textarea 
                 id="description" 
-                name="description" 
+                name="listing[description]" 
                 placeholder="Enter description"
                 required
             ></textarea>
@@ -41,7 +42,7 @@
             <input 
                 type="text" 
                 id="image" 
-                name="image" 
+                name="listing[image][url]" 
                 placeholder="Enter image URL"
             >
         </div>
@@ -53,7 +54,7 @@
             <input 
                 type="number" 
                 id="price" 
-                name="price" 
+                name="listing[price]" 
                 placeholder="Enter price"
                 required
             >
@@ -66,7 +67,7 @@
             <input 
                 type="text" 
                 id="location" 
-                name="location" 
+                name="listing[location]" 
                 placeholder="Enter location"
                 required
             >
@@ -79,7 +80,7 @@
             <input 
                 type="text" 
                 id="country" 
-                name="country" 
+                name="listing[country]" 
                 placeholder="Enter country"
                 required
             >

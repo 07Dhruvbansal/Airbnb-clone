@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= listing.title %></title>
+    <title>
+        <%= listing.title %>
+    </title>
 </head>
 
 <body>
 
-    <h1><%= listing.title %></h1>
+    <h1>
+        <%= listing.title %>
+    </h1>
 
-    <p><%= listing.description %></p>
+    <p>
+        <%= listing.description %>
+    </p>
 
-    <p>Price: ₹<%= listing.price %></p>
+    <p>Price: ₹<%= listing.price %>
+    </p>
 
-    <p>Location: <%= listing.location %></p>
+    <p>Location: <%= listing.location %>
+    </p>
 
-    <p>Country: <%= listing.country %></p>
+    <p>Country: <%= listing.country %>
+    </p>
 
-    <img src="<%= listing.image.url %>" 
-         alt="<%= listing.title %>" 
-         width="400">
+    <img src="<%= listing.image.url %>" alt="<%= listing.title %>" width="400">
+
+    <a href="/listings/<%= listing._id %>/edit">
+        <button>Edit this listing</button>
+    </a>
+
+    <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete this listing</button>
+    </form>
 
 </body>
+
 </html>
