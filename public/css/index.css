@@ -1,0 +1,73 @@
+/* Listing Grid */
+
+.listing-card {
+    border: none !important;
+    background-color: white;
+}
+
+.listing-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.listing-image-container img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+
+/* Heart */
+
+.listing-heart {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    color: white;
+    font-size: 1.7rem;
+
+    filter: drop-shadow(0 1px 2px black);
+}
+
+
+/* Card Content */
+
+.listing-card .card-body {
+    padding: 0.7rem 0.2rem;
+}
+
+.listing-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.listing-location {
+    color: #717171;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.listing-price {
+    color: #222;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.listing-price span {
+    font-weight: normal;
+}
+
+
+/* Remove link styling */
+
+.listing-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.listing-link:hover {
+    color: inherit;
+}
