@@ -22,14 +22,16 @@
         </p>
 
         <p>
-            ₹<%= listing.price.toLocaleString("en-IN") %>
+            ₹<%= listing.price.toLocaleString("en-IN") %> / night
         </p>
 
         <p>
+            <i class="fa-solid fa-location-dot"></i>
             <%= listing.location %>
         </p>
 
         <p>
+            <i class="fa-solid fa-earth-americas"></i>
             <%= listing.country %>
         </p>
 
@@ -38,6 +40,7 @@
 
             <a href="/listings/<%= listing._id %>/edit">
                 <button class="btn btn-danger">
+                    <i class="fa-solid fa-pen-to-square"></i>
                     Edit
                 </button>
             </a>
@@ -47,11 +50,71 @@
                 method="POST"
             >
                 <button class="btn btn-dark">
+                    <i class="fa-solid fa-trash"></i>
                     Delete
                 </button>
             </form>
 
         </div>
+
+
+        <!-- Review Section -->
+        <hr class="mt-5">
+
+        <h3 class="mb-4">Leave a Review</h3>
+
+        <form 
+            action="/listings/<%= listing._id %>/reviews" 
+            method="POST"
+        >
+
+            <!-- Rating -->
+            <div class="mb-3">
+                <label for="rating" class="form-label">
+                    Rating
+                </label>
+
+                <input
+                    type="range"
+                    id="rating"
+                    name="review[rating]"
+                    class="form-range"
+                    min="1"
+                    max="5"
+                    value="3"
+                    required
+                >
+
+                <div class="text-muted">
+                    Select a rating from 1 to 5
+                </div>
+            </div>
+
+
+            <!-- Comment -->
+            <div class="mb-3">
+                <label for="comment" class="form-label">
+                    Comment
+                </label>
+
+                <textarea
+                    id="comment"
+                    name="review[comment]"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Share your experience..."
+                    required
+                ></textarea>
+            </div>
+
+
+            <!-- Submit -->
+            <button class="btn btn-danger">
+                <i class="fa-solid fa-star"></i>
+                Submit Review
+            </button>
+
+        </form>
 
     </div>
 </div>
